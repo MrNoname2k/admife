@@ -1,0 +1,64 @@
+@import '../../../../styles/scss/variables';
+
+.card-container {
+  display: flex;
+  border-radius: 40px;
+  flex-direction: column;
+  .card-header {
+    border-radius: 40px;
+    padding-bottom: 60%;
+    // background-image: url("../../../../assets/images/icons/sammy-the-man-putting-the-document-into-the-shredder.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    border: none;
+  }
+
+  .card-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 24px;
+
+    .main-title {
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .main-content {
+      font-size: 14px;
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    .main-actions {
+      display: flex;
+     gap: 46px;
+
+      button {
+        background-color: $theme-color;
+        padding: 8px 32px;
+        border-radius: 30px;
+        color: #fff;
+        font-weight: 400;
+      }
+
+      .btn-outline {
+        background-color: #fff;
+        color: $theme-color;
+        border: 1px solid $theme-color;
+      }
+    }
+  }
+}
+
+::ng-deep .dialog-info .mat-mdc-dialog-container {
+  .mdc-dialog__surface {
+    border-radius: 40px !important;
+  }
+}
+
+::ng-deep .dialog-backdrop {
+  background-color: #ffffffe3;
+}

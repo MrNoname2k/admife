@@ -1,0 +1,24 @@
+<li class="msg-list-item d-flex justify-content-between" *ngIf="notification">
+  <!-- profile picture end -->
+  <div class="profile-thumb">
+    <ng-container *ngFor="let ava of notification.userEntity.avatars">
+      <figure class="profile-thumb-middle" *ngFor="let url of ava | postImagePipe | async">
+        <img [src]="url" alt="profile picture">
+      </figure>
+    </ng-container>
+  </div>
+  <!-- profile picture end -->
+
+  <!-- message content start -->
+  <div class="msg-content">
+    <h6 class="author"><a href="profile.html">{{notification.userEntity.firstName + ' ' + notification.userEntity.lastName}}</a></h6>
+    <p>{{notification.content}}</p>
+  </div>
+  <!-- message content end -->
+
+  <!-- message time start -->
+  <div class="msg-time">
+    <p>{{utils.convertTimeToNotify(utils.getTimestamp(notification.createDate + ''))}}</p>
+  </div>
+  <!-- message time end -->
+</li>
